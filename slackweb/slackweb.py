@@ -15,9 +15,13 @@ import json
 
 class Slack():
 
-    def __init__(self, url=""):
+    def __init__(self, url="", proxy=None):
         self.url = url
-        self.opener = urlrequest.build_opener(urlrequest.HTTPHandler())
+        if proxy:
+                proxy = {'https': proxy}
+                self.opener = urlrequest.build_opener(urlrequest.HTTPHandler(), urlrequest.ProxyHandler(proxy))
+        else:
+                self.opener = urlrequest.build_opener(urlrequest.HTTPHandler())
 
     def notify(self, **kwargs):
         """

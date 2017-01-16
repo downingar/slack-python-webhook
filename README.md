@@ -20,10 +20,10 @@ $ sudo python setup.py install
 
 Get a token of slack webhook on [slack page](https://my.slack.com/services/new/incoming-webhook/).
 
-Instantiate:
+Instantiate, with optional proxy:
 <pre>
 > import slackweb
-> slack = slackweb.Slack(url="https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX")
+> slack = slackweb.Slack(url="https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX", proxy="https://proxy.URI")
 </pre>
 
 In case that you want to send a simple message:
